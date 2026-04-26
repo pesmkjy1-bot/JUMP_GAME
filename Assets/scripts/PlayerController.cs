@@ -31,6 +31,14 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        if (collision.CompareTag("Finish"))
+        {
+            collision.GetComponent<Level>().MoveToNextLevel();
+        }
+        if(collision.CompareTag("Enemy"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     private void Update()
